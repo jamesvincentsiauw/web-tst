@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6db582d-b150-4b04-a79b-eab0a9f80b9c" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+=======
+>>>>>>> f42b13d112ae698d28ab5d3acc175e5af356b911
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
@@ -73,8 +76,12 @@
       <option name="presentableId" value="Default" />
       <updated>1573807461659</updated>
       <workItem from="1573807464143" duration="1355000" />
+<<<<<<< HEAD
       <workItem from="1574646180415" duration="8626000" />
       <workItem from="1574670710627" duration="3247000" />
+=======
+      <workItem from="1574646180415" duration="9608000" />
+>>>>>>> f42b13d112ae698d28ab5d3acc175e5af356b911
     </task>
     <servers />
   </component>
