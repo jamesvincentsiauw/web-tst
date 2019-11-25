@@ -3,8 +3,8 @@
 # Simple E-Commerce
 
 API Usage:
-- Tokopedia API
-- Kurir Logistik API
+- Bukalapak API
+- Pengiriman Logistik API
 
 Created by:
 - David Petra Natanael - 18217011
