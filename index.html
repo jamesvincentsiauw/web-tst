@@ -5,19 +5,22 @@
     <title>Simple E-Commerce</title>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylesheet.css">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <link href="stylesheet.css" rel="stylesheet">
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" id="bootstrap-css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
 </head>
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="index.html">Simple Ecommerce</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <button aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-target="#navbarsExampleDefault" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -42,9 +45,10 @@
 
             <form class="form-inline my-2 my-lg-0">
                 <div class="input-group input-group-sm">
-                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search...">
+                    <input aria-describedby="inputGroup-sizing-sm" aria-label="Small" class="form-control"
+                           placeholder="Search..." type="text">
                     <div class="input-group-append">
-                        <button type="button" class="btn btn-secondary btn-number">
+                        <button class="btn btn-secondary btn-number" type="button">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -66,7 +70,6 @@
 </section>
 
 
-
 <section class="pb-5" id="form">
     <div class="container py-3">
         <div class="row">
@@ -80,36 +83,38 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Name</label>
                                 <div class="col-lg-9">
-                                    <input class="form-control" type="text" value="Jane">
+                                    <input class="form-control" id="name" placeholder="example: Petra" type="text">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Telephone Number</label>
                                 <div class="col-lg-9">
-                                    <input class="form-control" type="text" value="081222266119">
+                                    <input class="form-control" id="telp" placeholder="example: 085797498412"
+                                           type="text">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Address</label>
                                 <div class="col-lg-9">
-                                    <input class="form-control" type="text" value="Jl. Ganesha No. 10">
+                                    <input class="form-control" id="address" placeholder="example: Jl. Ganesha No. 10"
+                                           type="text">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Category</label>
                                 <div class="col-lg-9">
-                                    <select id="cat" onchange="getBarang()" class="browser-default custom-select">
+                                    <select class="browser-default custom-select" id="cat" onchange="getBarang()" onclick="test">
                                         <option selected>Please choose product category</option>
-                                        <option value="tas">Tas</option>
-                                        <option value="kaos">Kaos</option>
-                                        <option value="sandal">Sandal</option>
+                                        <option value="Tas">Tas</option>
+                                        <option value="Kaos">Kaos</option>
+                                        <option value="Sandal">Sandal</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Product</label>
                                 <div class="col-lg-9">
-                                    <select id="product" class="browser-default custom-select">
+                                    <select class="browser-default custom-select" id="product">
                                         <option selected>--</option>
                                     </select>
                                 </div>
@@ -117,13 +122,13 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Weight</label>
                                 <div class="col-lg-9">
-                                    <p>5 gr</p>
+                                    <p id="weight">5 gr</p>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Origin City</label>
                                 <div class="col-lg-9">
-                                    <select id="origin" class="browser-default custom-select">
+                                    <select class="browser-default custom-select" id="origin">
                                         <option selected>--</option>
                                     </select>
                                 </div>
@@ -131,7 +136,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Destination City</label>
                                 <div class="col-lg-9">
-                                    <select id="destination" class="browser-default custom-select">
+                                    <select class="browser-default custom-select" id="destination">
                                         <option selected>--</option>
                                     </select>
                                 </div>
@@ -139,11 +144,11 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Delivery Provider</label>
                                 <div class="col-lg-9">
-                                    <select class="browser-default custom-select">
+                                    <select class="browser-default custom-select" id="provider">
                                         <option selected>Please choose delivery provider</option>
-                                        <option value="jne">JNE</option>
-                                        <option value="tiki">Tiki</option>
-                                        <option value="pos">Pos Indonesia</option>
+                                        <option value="JNE">JNE</option>
+                                        <option value="TIKI">Tiki</option>
+                                        <option value="Pos Indonesia">Pos Indonesia</option>
                                     </select>
                                 </div>
                             </div>
@@ -156,7 +161,8 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label"></label>
                                 <div class="col-lg-9">
-                                    <input class="btn btn-success" data-target="#order" data-toggle="modal" type="button" value="Order!">
+                                    <input class="btn btn-success" data-target="#order" data-toggle="modal"
+                                           id="orderButton" onclick="cetakModal()" type="button" value="Order!">
                                 </div>
                             </div>
                         </form>
@@ -189,18 +195,20 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Name: </p>
-                <p>Telephone Number: </p>
-                <p>Address: </p>
-                <p>Category: </p>
-                <p>Product: </p>
-                <p>Origin City: </p>
-                <p>Destination City: </p>
-                <p>Delivery Provider: </p>
+                <p id="modalName">Name: </p>
+                <p id="modalTelp">Telephone Number: </p>
+                <p id="modalAddress">Address: </p>
+                <p id="modalCategory">Category: </p>
+                <p id="modalProduct">Product: </p>
+                <p id="modalWeight">Weight: </p>
+                <p id="modalOrigin">Origin City: </p>
+                <p id="modalDest">Destination City: </p>
+                <p id="modalProvider">Delivery Provider: </p>
+                <p id="modalPrice">Shipping Price: </p>
             </div>
             <div class="modal-footer">
                 <button class="btn" data-dismiss="modal" type="button">Cancel</button>
-                <button class="btn btn-success" type="button">Order!</button>
+                <button class="btn btn-success" type="submit">Order!</button>
             </div>
         </div>
     </div>
@@ -210,13 +218,17 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script >
+
+<script>
     function getCity() {
-        content="<option>--</option>";
+        content = "<option>--</option>";
         $.ajax({
             url: 'http://3.86.222.187:8000/getcity',
             type: 'get',
@@ -224,8 +236,8 @@
             dataType: 'json',
             success: function (response) {
                 console.log(response);
-                $.each(response.slice(0,500), function (key, value) {
-                    content+= "<option value='value.city_id'>"+ value.city_name+"</option>";
+                $.each(response.slice(0, 500), function (key, value) {
+                    content += "<option value='value.city_id'>" + value.city_name + "</option>";
                 });
                 $('#origin').html(content);
                 $('#destination').html(content);
@@ -235,17 +247,18 @@
             }
         })
     }
-    function getBarang(){
-        content="<option>--</option>";
+
+    function getBarang() {
+        content = "<option>--</option>";
         $.ajax({
-            url: 'http://3.86.222.187:8080/'+$('#cat').val(),
+            url: 'http://3.86.222.187:8080/' + $('#cat').val(),
             type: 'get',
             crossDomain: true,
             dataType: 'json',
             success: function (response) {
                 console.log(response);
-                $.each(response.slice(0,20), function (key, value) {
-                    content+= "<option value='value.nama'>"+ value.nama+"|<strong>Harga: Rp "+value.harga+"</strong></option>";
+                $.each(response.slice(0, 20), function (key, value) {
+                    content += "<option value='value.nama'>" + value.nama + "|<strong>Harga: Rp " + value.harga + "</strong></option>";
                 });
                 $('#product').html(content);
             },
@@ -254,7 +267,28 @@
             }
         })
     }
+
     $(document).ready(getCity());
+
+    var i = 0;
+
+    function cetakModal() {
+        if (i === 0) {
+            $('#modalName').append($('#name').val());
+            $('#modalTelp').append($('#telp').val());
+            $('#modalAddress').append($('#address').val());
+            $('#modalCategory').append($('#cat').val());
+            $('#modalProduct').append($('#product').val());
+            $('#modalWeight').append($('#weight').val());
+            $('#modalOrigin').append($('#origin').val());
+            $('#modalDest').append($('#destination').val());
+            $('#modalProvider').append($('#provider').val());
+            $('#modalPrice').append($('#price').val());
+            i++;
+        }
+    }
 </script>
+
+
 </body>
 </html>
