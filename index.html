@@ -183,6 +183,13 @@
     <br>
 </article>
 
+
+<div id="overlay" style="display:none;">
+    <div class="spinner"></div>
+    <br/>
+    Loading...
+</div>
+
 <!-- Modal -->
 <div aria-hidden="true" aria-labelledby="orderLabel" class="modal fade" id="order" role="dialog"
      tabindex="-1">
@@ -226,8 +233,11 @@
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+
 <script>
     function getCity() {
+        $('#overlay').fadeIn().delay(3500).fadeOut();
+
         content = "<option>--</option>";
         $.ajax({
             url: 'http://3.86.222.187:8000/getcity',
@@ -249,6 +259,8 @@
     }
 
     function getBarang() {
+        $('#overlay').fadeIn().delay(3500).fadeOut();
+
         content = "<option>--</option>";
         $.ajax({
             url: 'http://3.86.222.187:8080/' + $('#cat').val().toLowerCase(),
