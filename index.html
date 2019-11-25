@@ -98,22 +98,19 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Category</label>
                                 <div class="col-lg-9">
-                                    <select class="browser-default custom-select">
+                                    <select id="cat" onchange="getBarang()" class="browser-default custom-select">
                                         <option selected>Please choose product category</option>
-                                        <option value="1">Tas</option>
-                                        <option value="2">Kaos</option>
-                                        <option value="3">Sandal</option>
+                                        <option value="tas">Tas</option>
+                                        <option value="kaos">Kaos</option>
+                                        <option value="sandal">Sandal</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Product</label>
                                 <div class="col-lg-9">
-                                    <select class="browser-default custom-select">
-                                        <option selected>Please choose your product</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <select id="product" class="browser-default custom-select">
+                                        <option selected>--</option>
                                     </select>
                                 </div>
                             </div>
@@ -144,9 +141,9 @@
                                 <div class="col-lg-9">
                                     <select class="browser-default custom-select">
                                         <option selected>Please choose delivery provider</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <option value="jne">JNE</option>
+                                        <option value="tiki">Tiki</option>
+                                        <option value="pos">Pos Indonesia</option>
                                     </select>
                                 </div>
                             </div>
@@ -232,6 +229,25 @@
                 });
                 $('#origin').html(content);
                 $('#destination').html(content);
+            },
+            error: function (response) {
+                console.log(response);
+            }
+        })
+    }
+    function getBarang(){
+        content="<option>--</option>";
+        $.ajax({
+            url: 'http://3.86.222.187:8080/'+$('#cat').val(),
+            type: 'get',
+            crossDomain: true,
+            dataType: 'json',
+            success: function (response) {
+                console.log(response);
+                $.each(response.slice(0,20), function (key, value) {
+                    content+= "<option value='value.nama'>"+ value.nama+"|<strong>Harga: Rp "+value.harga+"</strong></option>";
+                });
+                $('#product').html(content);
             },
             error: function (response) {
                 console.log(response);
