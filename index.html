@@ -11,9 +11,6 @@
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-
-
 </head>
 <body>
 
@@ -26,20 +23,20 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
             <ul class="navbar-nav m-auto">
-                <li class="nav-item m-auto">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="category.html">Categories</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="product.html">Product</a>
-                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="contact.html">Cart <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="#" id="navbarDropdown" role="button">
+                        Categories
+                    </a>
+                    <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+                        <a class="dropdown-item" href="tas.html">Tas</a>
+                        <a class="dropdown-item" href="kaos.html">Kaos</a>
+                        <a class="dropdown-item" href="sandal.html">Sandal</a>
+                    </div>
                 </li>
             </ul>
 
@@ -69,85 +66,142 @@
 </section>
 
 
-<div class="container">
-<div class="row">
-    <div class="col-md-4">
-        <figure class="card card-product">
-            <div class="img-wrap"><img src="iphone-11-pro-max-gold-select-2019.png"></div>
-            <figcaption class="info-wrap">
-                <h4 class="title">Another name of item</h4>
-                <p class="desc">Some small description goes here</p>
-                <div class="rating-wrap">
-                    <div class="label-rating">132 reviews</div>
-                    <div class="label-rating">154 orders </div>
-                </div> <!-- rating-wrap.// -->
-            </figcaption>
-            <div class="bottom-wrap">
-                <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
-                <div class="price-wrap h5">
-                    <span class="price-new">$1280</span> <del class="price-old">$1980</del>
-                </div> <!-- price-wrap.// -->
-            </div> <!-- bottom-wrap.// -->
-        </figure>
-    </div> <!-- col // -->
-    <div class="col-md-4">
-        <figure class="card card-product">
-            <div class="img-wrap"><img src="baju.jpg"> </div>
-            <figcaption class="info-wrap">
-                <h4 class="title">Good product</h4>
-                <p class="desc">Some small description goes here</p>
-                <div class="rating-wrap">
-                    <div class="label-rating">132 reviews</div>
-                    <div class="label-rating">154 orders </div>
-                </div> <!-- rating-wrap.// -->
-            </figcaption>
-            <div class="bottom-wrap">
-                <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
-                <div class="price-wrap h5">
-                    <span class="price-new">$1280</span> <del class="price-old">$1980</del>
-                </div> <!-- price-wrap.// -->
-            </div> <!-- bottom-wrap.// -->
-        </figure>
-    </div> <!-- col // -->
-    <div class="col-md-4">
-        <figure class="card card-product">
-            <div class="img-wrap"><img src="masker.jpg"></div>
-            <figcaption class="info-wrap">
-                <h4 class="title">Product name goes here</h4>
-                <p class="desc">Some small description goes here</p>
-                <div class="rating-wrap">
-                    <div class="label-rating">132 reviews</div>
-                    <div class="label-rating">154 orders </div>
-                </div> <!-- rating-wrap.// -->
-            </figcaption>
-            <div class="bottom-wrap">
-                <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
-                <div class="price-wrap h5">
-                    <span class="price-new">$1280</span> <del class="price-old">$1980</del>
-                </div> <!-- price-wrap.// -->
-            </div> <!-- bottom-wrap.// -->
-        </figure>
-    </div> <!-- col // -->
-</div> <!-- row.// -->
 
+<section class="pb-5" id="form">
+    <div class="container py-3">
+        <div class="row">
+            <div class="mx-auto col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Please input your order and choose delivery provider</h5>
+                    </div>
+                    <div class="card-body">
+                        <form autocomplete="off" class="form" role="form">
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Name</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" value="Jane">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Telephone Number</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" value="081222266119">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" value="Jl. Ganesha No. 10">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Category</label>
+                                <div class="col-lg-9">
+                                    <select class="browser-default custom-select">
+                                        <option selected>Please choose product category</option>
+                                        <option value="1">Tas</option>
+                                        <option value="2">Kaos</option>
+                                        <option value="3">Sandal</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Product</label>
+                                <div class="col-lg-9">
+                                    <select class="browser-default custom-select">
+                                        <option selected>Please choose your product</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Origin City</label>
+                                <div class="col-lg-9">
+                                    <select class="browser-default custom-select">
+                                        <option selected>Please choose origin city</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Destination City</label>
+                                <div class="col-lg-9">
+                                    <select class="browser-default custom-select">
+                                        <option selected>Please choose destination city</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Delivery Provider</label>
+                                <div class="col-lg-9">
+                                    <select class="browser-default custom-select">
+                                        <option selected>Please choose delivery provider</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label"></label>
+                                <div class="col-lg-9">
+                                    <input class="btn btn-success" data-target="#order" data-toggle="modal" type="button" value="Order!">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-
-</div>
-<!--container.//-->
-
-<br><br><br>
 <article class="bg-secondary mb-3">
     <div class="card-body text-center">
         <h4 class="text-white">TUGAS BESAR TST <br> <br> Simple E-Commerce </h4>
         <p class="h5 text-white"> with Tokopedia API & Kurir Logistik API</p>
         <p class="h5 text-white"> David Petra Natanael - 18217011 </p>
         <p class="h5 text-white"> Vincent - 18217042 </p>
-        <br>
-        <p><a class="btn btn-warning" target="_blank" href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com
-            <i class="fa fa-window-restore "></i></a></p>
     </div>
-    <br><br><br>
+    <br>
 </article>
+
+<!-- Modal -->
+<div aria-hidden="true" aria-labelledby="orderLabel" class="modal fade" id="order" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Please Confirm Your Order!</h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Name: </p>
+                <p>Telephone Number: </p>
+                <p>Address: </p>
+                <p>Category: </p>
+                <p>Product: </p>
+                <p>Origin City: </p>
+                <p>Destination City: </p>
+                <p>Delivery Provider: </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" type="button">Cancel</button>
+                <button class="btn btn-success" type="button">Order!</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
