@@ -103,7 +103,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Category</label>
                                 <div class="col-lg-9">
-                                    <select class="browser-default custom-select" id="cat" onchange="getBarang()" onclick="test">
+                                    <select class="browser-default custom-select" id="cat" onchange="getBarang()">
                                         <option selected>Please choose product category</option>
                                         <option value="Tas">Tas</option>
                                         <option value="Kaos">Kaos</option>
@@ -114,7 +114,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Product</label>
                                 <div class="col-lg-9">
-                                    <select class="browser-default custom-select" id="product">
+                                    <select class="browser-default custom-select" onchange="showWeight()" id="product">
                                         <option selected>--</option>
                                     </select>
                                 </div>
@@ -122,7 +122,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Weight</label>
                                 <div class="col-lg-9">
-                                    <p id="weight">5 gr</p>
+                                    <p id="weight">0 Gram</p>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -147,8 +147,8 @@
                                     <select class="browser-default custom-select" id="provider">
                                         <option selected>Please choose delivery provider</option>
                                         <option value="JNE">JNE</option>
-                                        <option value="TIKI">Tiki</option>
-                                        <option value="Pos Indonesia">Pos Indonesia</option>
+                                        <option value="Tiki">Tiki</option>
+                                        <option value="Pos">Pos Indonesia</option>
                                     </select>
                                 </div>
                             </div>
@@ -251,7 +251,7 @@
     function getBarang() {
         content = "<option>--</option>";
         $.ajax({
-            url: 'http://3.86.222.187:8080/' + $('#cat').val(),
+            url: 'http://3.86.222.187:8080/' + $('#cat').val().toLowerCase(),
             type: 'get',
             crossDomain: true,
             dataType: 'json',
@@ -279,13 +279,16 @@
             $('#modalAddress').append($('#address').val());
             $('#modalCategory').append($('#cat').val());
             $('#modalProduct').append($('#product').val());
-            $('#modalWeight').append($('#weight').val());
+            $('#modalWeight').append($('#weight').html());
             $('#modalOrigin').append($('#origin').val());
             $('#modalDest').append($('#destination').val());
             $('#modalProvider').append($('#provider').val());
             $('#modalPrice').append($('#price').val());
             i++;
         }
+    }
+    function showWeight(){
+        $('#weight').html(Math.floor(Math.random()*10000)+" Gram");
     }
 </script>
 
