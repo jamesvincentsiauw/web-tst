@@ -2,73 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Simple E-Commerce</title>
-
+    <title>Fashion E-Commerce</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
     <link href="stylesheet.css" rel="stylesheet">
-
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" id="bootstrap-css" rel="stylesheet">
     <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
 </head>
 <body>
-
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Simple Ecommerce</a>
+        <a class="navbar-brand" href="index.html">Fashion E-Commerce</a>
         <button aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"
                 class="navbar-toggler" data-target="#navbarsExampleDefault" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-            <ul class="navbar-nav m-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
-                       data-toggle="dropdown"
-                       href="#" id="navbarDropdown" role="button">
-                        Categories
-                    </a>
-                    <div aria-labelledby="navbarDropdown" class="dropdown-menu">
-                        <a class="dropdown-item" href="tas.html">Tas</a>
-                        <a class="dropdown-item" href="kaos.html">Kaos</a>
-                        <a class="dropdown-item" href="sandal.html">Sandal</a>
-                    </div>
-                </li>
-            </ul>
-
-            <form class="form-inline my-2 my-lg-0">
-                <div class="input-group input-group-sm">
-                    <input aria-describedby="inputGroup-sizing-sm" aria-label="Small" class="form-control"
-                           placeholder="Search..." type="text">
-                    <div class="input-group-append">
-                        <button class="btn btn-secondary btn-number" type="button">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-                <a class="btn btn-success btn-sm ml-3" href="cart.html">
-                    <i class="fa fa-shopping-cart"></i> Cart
-                    <span class="badge badge-light">3</span>
-                </a>
-            </form>
-        </div>
     </div>
 </nav>
 
-
 <section class="jumbotron text-center">
     <div class="container">
-        <h1 class="jumbotron-heading">E-COMMERCE ABAL ABAL</h1>
+        <h1 class="jumbotron-heading">Fashion E-Commerce</h1>
     </div>
 </section>
-
 
 <section class="pb-5" id="form">
     <div class="container py-3">
@@ -114,7 +73,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Product</label>
                                 <div class="col-lg-9">
-                                    <select class="browser-default custom-select" onchange="showWeight()" id="product">
+                                    <select class="browser-default custom-select" id="product" onchange="showWeight()">
                                         <option selected>--</option>
                                     </select>
                                 </div>
@@ -175,14 +134,13 @@
 
 <article class="bg-secondary mb-3">
     <div class="card-body text-center">
-        <h4 class="text-white">TUGAS BESAR TST <br> <br> Simple E-Commerce </h4>
-        <p class="h5 text-white"> with Tokopedia API & Kurir Logistik API</p>
+        <h4 class="text-white">TUGAS BESAR TST <br> <br> Fashion E-Commerce </h4>
+        <p class="h5 text-white"> with BukaLapak API & Pengiriman Logistik API</p>
         <p class="h5 text-white"> David Petra Natanael - 18217011 </p>
         <p class="h5 text-white"> Vincent - 18217042 </p>
     </div>
     <br>
 </article>
-
 
 <div id="overlay" style="display:none;">
     <div class="spinner"></div>
@@ -221,7 +179,6 @@
     </div>
 </div>
 
-
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -232,7 +189,6 @@
 <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 
 <script>
     function getCity() {
@@ -299,11 +255,10 @@
             i++;
         }
     }
-    function showWeight(){
-        $('#weight').html(Math.floor(Math.random()*10000)+" Gram");
+
+    function showWeight() {
+        $('#weight').html(Math.floor(Math.random() * 10000) + " Gram");
     }
 </script>
-
-
 </body>
 </html>
