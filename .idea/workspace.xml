@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6db582d-b150-4b04-a79b-eab0a9f80b9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/kaos.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sandal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tas.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baju.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iphone-11-pro-max-gold-select-2019.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/masker.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheet.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573807461659</updated>
       <workItem from="1573807464143" duration="1355000" />
-      <workItem from="1574646180415" duration="8626000" />
+      <workItem from="1574646180415" duration="9608000" />
     </task>
     <servers />
   </component>
