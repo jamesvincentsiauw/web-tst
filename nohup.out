@@ -1,0 +1,149 @@
+Traceback (most recent call last):
+  File "app.py", line 47, in <module>
+    run()
+  File "app.py", line 41, in run
+    with HTTPServer(("", port), myHandler) as httpd:
+  File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+    self.server_bind()
+  File "/usr/lib64/python3.6/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+182.253.162.23 - - [25/Nov/2019 09:48:04] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:48:06] "GET /favicon.ico HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:48:42] "GET /getcity HTTP/1.1" 200 -
+----------------------------------------
+Exception happened during processing of request from ('182.253.162.23', 5277)
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/socketserver.py", line 320, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib64/python3.6/socketserver.py", line 351, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib64/python3.6/socketserver.py", line 364, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib64/python3.6/socketserver.py", line 724, in __init__
+    self.handle()
+  File "/usr/lib64/python3.6/http/server.py", line 418, in handle
+    self.handle_one_request()
+  File "/usr/lib64/python3.6/http/server.py", line 406, in handle_one_request
+    method()
+  File "app.py", line 42, in do_GET
+    self.wfile.write(bytes(json.dumps(ret).encode('UTF-8')))
+  File "/usr/lib64/python3.6/socketserver.py", line 803, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+182.253.162.23 - - [25/Nov/2019 09:48:44] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:48:58] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:49:13] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:49:30] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:50:03] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:50:35] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:51:22] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:51:54] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:53:51] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:54:05] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:54:59] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:55:15] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:56:02] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:56:39] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:56:54] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:57:14] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 09:57:40] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:08:40] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:11:31] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:11:51] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:13:05] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:20:55] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:27:16] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:27:37] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:28:54] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:36:37] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:36:48] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:36:50] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:37:12] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:37:14] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:38:14] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:38:39] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:51:29] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:51:41] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:51:48] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:52:36] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:53:11] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:56:04] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:57:14] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:58:17] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:58:42] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 10:59:47] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:02:33] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:06:59] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:07:28] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:08:04] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:08:53] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:09:31] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:29:45] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:32:30] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:32:57] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:33:03] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:33:28] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:33:43] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:34:07] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:34:36] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:35:58] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:37:00] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:37:31] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:38:43] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:40:00] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:40:51] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:41:06] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:41:31] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:44:07] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:46:03] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:47:07] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:47:55] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:47:56] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:49:43] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:49:59] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:53:20] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:56:07] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:56:12] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:58:27] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:59:15] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:59:16] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 11:59:19] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 12:00:08] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 12:00:10] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 12:05:56] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 12:11:17] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 12:11:21] "GET /getcity HTTP/1.1" 200 -
+182.253.162.23 - - [25/Nov/2019 12:11:33] "GET /getcity HTTP/1.1" 200 -
+----------------------------------------
+Exception happened during processing of request from ('182.253.162.23', 4741)
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/socketserver.py", line 320, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib64/python3.6/socketserver.py", line 351, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib64/python3.6/socketserver.py", line 364, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib64/python3.6/socketserver.py", line 724, in __init__
+    self.handle()
+  File "/usr/lib64/python3.6/http/server.py", line 418, in handle
+    self.handle_one_request()
+  File "/usr/lib64/python3.6/http/server.py", line 406, in handle_one_request
+    method()
+  File "app.py", line 42, in do_GET
+    self.wfile.write(bytes(json.dumps(ret).encode('UTF-8')))
+Traceback (most recent call last):
+  File "app.py", line 57, in <module>
+    run()
+  File "app.py", line 51, in run
+    with HTTPServer(("", port), myHandler) as httpd:
+  File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+    self.server_bind()
+  File "/usr/lib64/python3.6/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
