@@ -72,6 +72,11 @@ section .section-title-down {
     opacity: .80;
 }
 
+.total{
+    color: red;
+    font-size: 20px;
+}
+
 .spinner {
     margin: 0 auto;
     height: 64px;
