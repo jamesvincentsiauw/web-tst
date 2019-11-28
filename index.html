@@ -38,7 +38,7 @@
                         <h5 class="mb-0">Please input your order and choose delivery provider</h5>
                     </div>
                     <div class="card-body">
-                        <form id="formOrder" autocomplete="off" class="form" role="form">
+                        <form autocomplete="off" class="form" id="formOrder" role="form">
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Name</label>
                                 <div class="col-lg-9">
@@ -62,7 +62,8 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Category</label>
                                 <div class="col-lg-9">
-                                    <select class="browser-default custom-select" id="cat" name="cat" onchange="getBarang()">
+                                    <select class="browser-default custom-select" id="cat" name="cat"
+                                            onchange="getBarang()">
                                         <option selected>Please choose product category</option>
                                         <option value="Tas">Tas</option>
                                         <option value="Kaos">Kaos</option>
@@ -87,7 +88,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Origin City</label>
                                 <div class="col-lg-9">
-                                    <select class="browser-default custom-select" name="origin" id="origin">
+                                    <select class="browser-default custom-select" id="origin" name="origin">
                                         <option selected>--</option>
                                     </select>
                                 </div>
@@ -95,7 +96,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Destination City</label>
                                 <div class="col-lg-9">
-                                    <select class="browser-default custom-select" name="destination" id="destination">
+                                    <select class="browser-default custom-select" id="destination" name="destination">
                                         <option selected>--</option>
                                     </select>
                                 </div>
@@ -103,7 +104,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Delivery Provider</label>
                                 <div class="col-lg-9">
-                                    <select class="browser-default custom-select" name="courier" id="provider">
+                                    <select class="browser-default custom-select" id="provider" name="courier">
                                         <option selected>Please choose delivery provider</option>
                                         <option value="JNE">JNE</option>
                                         <option value="Tiki">Tiki</option>
@@ -114,16 +115,16 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Shipping Price</label>
                                 <div class="col-md-4">
-                                    Rp <a id="price">0</a>, 00
+                                    Rp <a id="price">0</a>,-
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="button" onclick="calculatePrice()" value="Calculate">
+                                    <input onclick="calculatePrice()" type="button" value="Calculate">
                                 </div>
                             </div>
                             <div class="form-group row total">
                                 <label class="col-lg-3 col-form-label form-control-label">Total Price</label>
                                 <div class="col-md-4">
-                                    <strong>Rp <a id="totalPrice">0</a>, 00</strong>
+                                    <strong>Rp <a id="totalPrice">0</a>,-</strong>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -175,11 +176,11 @@
                 <a id="modalCategory"><strong>Category: </strong></a><br>
                 <a id="modalProduct"><strong>Product: </strong></a><br>
                 <a id="modalWeight"><strong>Weight: </strong></a><br>
-                <a id="modalOrigin"<strong>>Origin City: </strong></a><br>
+                <a id="modalOrigin"><strong>Origin City: </strong></a><br>
                 <a id="modalDest"><strong>Destination City: </strong></a><br>
                 <a id="modalProvider"><strong>Delivery Provider: </strong></a><br>
-                <a id="modalPrice"><strong>Shipping Price: </strong>Rp </a>, 00 <br>
-                <strong><a id="modalTotalPrice" class="total">Total Price: Rp </a>, 00</strong><br>
+                <a id="modalPrice"><strong>Shipping Price: </strong>Rp </a>,- <br>
+                <strong><a class="total" id="modalTotalPrice">Total Price: Rp </a>,-</strong><br>
             </div>
             <div class="modal-footer">
                 <button class="btn" data-dismiss="modal" type="button">Cancel</button>
@@ -213,7 +214,7 @@
             success: function (response) {
                 console.log(response);
                 $.each(response.slice(0, 501), function (key, value) {
-                    content += "<option value="+value.city_id+">" + value.city_name + "</option>";
+                    content += "<option value=" + value.city_id + ">" + value.city_name + "</option>";
                 });
                 $('#origin').html(content);
                 $('#destination').html(content);
@@ -236,7 +237,7 @@
             success: function (response) {
                 console.log(response);
                 $.each(response.slice(0, 20), function (key, value) {
-                    content += "<option value="+value.nama+">" + value.nama + "|<strong>Harga: Rp " + value.harga + "</strong></option>";
+                    content += "<option value=" + value.nama + ">" + value.nama + " | <strong>Harga: Rp " + value.harga + ",-</strong></option>";
                 });
                 $('#product').html(content);
             },
@@ -274,15 +275,16 @@
     function showWeight() {
         $('#weight').html(Math.floor(Math.random() * 10000));
     }
+
     function calculatePrice() {
         var weight = Number($('#weight').html());
         var origin = Number($('#origin').val());
         var destination = Number($('#destination').val());
         var courier = $('#provider').val().toLowerCase();
-        console.log("weight: "+weight);
-        console.log("origin: "+origin);
-        console.log("destination: "+destination);
-        console.log("courier: "+courier);
+        console.log("weight: " + weight);
+        console.log("origin: " + origin);
+        console.log("destination: " + destination);
+        console.log("courier: " + courier);
         $.ajax({
             url: 'http://3.92.50.97:4040/api/cost',
             type: 'post',
@@ -294,14 +296,13 @@
             },
             success: function (response) {
                 $('#price').html(response);
-                var total = Number(response)+Number($('#product :selected').html().split('Rp ')[1]);
-                console.log("tes: "+ Number($('#product :selected').html().split('Rp ')[1]));
-                console.log("total: "+total);
+                var total = Number(response) + Number($('#product :selected').html().split('Rp ')[1]);
+                console.log("tes: " + Number($('#product :selected').html().split('Rp ')[1]));
+                console.log("total: " + total);
                 $('#totalPrice').html(total);
-                if (response !== 999 || response !== "999"){
+                if (response !== 999 || response !== "999") {
                     $('#orderButton').disabled = false
-                }
-                else {
+                } else {
                     $('#orderButton').disabled = true
                 }
                 console.log(response)
@@ -311,6 +312,45 @@
             }
         })
     }
+
+    function createOrder() {
+        var name = $('#name').val();
+        var origin = $('#origin :selected').html();
+        var destination = $('#destination :selected').html();
+        var goods = $('#product :selected').html();
+        var weight = $('#weight').html();
+        var cost = $('#totalPrice').html();
+        var courier = $('#provider').val().toLowerCase();
+        console.log("name: " + name);
+        console.log("origin: " + origin);
+        console.log("destination: " + destination);
+        console.log("goods: " + goods);
+        console.log("weight: " + weight);
+        console.log("cost: " + cost);
+        console.log("courier: " + courier);
+        $.ajax({
+            url: 'http://3.92.50.97:4040/api/order',
+            type: 'post',
+            data: {
+                'data': {
+                    'name': name,
+                    'origin': origin,
+                    'destination': destination,
+                    'goods': goods,
+                    'weight': weight,
+                    'cost': cost,
+                    'courier': courier,
+                }
+            },
+            success: function (response) {
+                console.log(response)
+            },
+            error: function (response) {
+                console.log(response)
+            }
+        })
+    }
+
 </script>
 </body>
 </html>
