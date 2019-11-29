@@ -250,6 +250,7 @@
     $(document).ready(
         function () {
             getCity();
+            $('#orderButton').prop('disabled',true);
         }
     );
 
@@ -300,10 +301,10 @@
                 console.log("tes: " + Number($('#product :selected').html().split('Rp ')[1]));
                 console.log("total: " + total);
                 $('#totalPrice').html(total);
-                if (response !== 999 || response !== "999") {
-                    $('#orderButton').disabled = false
+                if (Number(response) !== 999) {
+                    $('#orderButton').prop('disabled',false);
                 } else {
-                    $('#orderButton').disabled = true
+                    $('#orderButton').prop('disabled',true);
                 }
                 console.log(response)
             },
@@ -343,6 +344,7 @@
             success: function (response) {
                 console.log(response);
                 alert(response['result']['message']+" with ID: "+response['result']['id'])
+                document.location.reload(true);
             },
             error: function (response) {
                 console.log(response);
