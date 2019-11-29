@@ -184,7 +184,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn" data-dismiss="modal" type="button">Cancel</button>
-                <button class="btn btn-success" type="submit">Order!</button>
+                <button class="btn btn-success" onclick="createOrder()" type="submit">Order!</button>
             </div>
         </div>
     </div>
@@ -315,38 +315,37 @@
 
     function createOrder() {
         var name = $('#name').val();
-        var origin = $('#origin :selected').html();
-        var destination = $('#destination :selected').html();
-        var goods = $('#product :selected').html();
-        var weight = $('#weight').html();
-        var cost = $('#totalPrice').html();
+        var origin = $('#origin :selected').val();
+        var destination = $('#destination :selected').val();
+        var goods = $('#product :selected').html().split('|')[0];
+        var weight = Number($('#weight').html());
+        // var cost = $('#totalPrice').html();
         var courier = $('#provider').val().toLowerCase();
         console.log("name: " + name);
         console.log("origin: " + origin);
         console.log("destination: " + destination);
         console.log("goods: " + goods);
         console.log("weight: " + weight);
-        console.log("cost: " + cost);
+        // console.log("cost: " + cost);
         console.log("courier: " + courier);
         $.ajax({
             url: 'http://3.92.50.97:4040/api/order',
             type: 'post',
             data: {
-                'data': {
-                    'name': name,
-                    'origin': origin,
-                    'destination': destination,
-                    'goods': goods,
-                    'weight': weight,
-                    'cost': cost,
-                    'courier': courier,
-                }
+                name: name,
+                origin: 501,
+                destination: destination,
+                goods: goods,
+                weight: weight,
+                // 'cost': cost,
+                courier: courier,
             },
             success: function (response) {
-                console.log(response)
+                console.log(response);
+                alert(response['result']['message']+" with ID: "+response['result']['id'])
             },
             error: function (response) {
-                console.log(response)
+                console.log(response);
             }
         })
     }
