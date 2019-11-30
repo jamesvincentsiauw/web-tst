@@ -20,6 +20,19 @@
                 class="navbar-toggler" data-target="#navbarsExampleDefault" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Order <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a aria-disabled="true" class="nav-link" href="tracking.html" tabindex="-1">Track Order</a>
+                </li>
+            </ul>
+        </div>
+
+
     </div>
 </nav>
 
@@ -250,7 +263,7 @@
     $(document).ready(
         function () {
             getCity();
-            $('#orderButton').prop('disabled',true);
+            $('#orderButton').prop('disabled', true);
         }
     );
 
@@ -302,9 +315,9 @@
                 console.log("total: " + total);
                 $('#totalPrice').html(total);
                 if (Number(response) !== 999) {
-                    $('#orderButton').prop('disabled',false);
+                    $('#orderButton').prop('disabled', false);
                 } else {
-                    $('#orderButton').prop('disabled',true);
+                    $('#orderButton').prop('disabled', true);
                 }
                 console.log(response)
             },
@@ -334,7 +347,7 @@
             type: 'post',
             data: {
                 name: name,
-                origin: 501,
+                origin: origin,
                 destination: destination,
                 goods: goods,
                 weight: weight,
@@ -343,7 +356,7 @@
             },
             success: function (response) {
                 console.log(response);
-                alert(response['result']['message']+" with ID: "+response['result']['id'])
+                alert(response['result']['message'] + " with ID: " + response['result']['id'])
                 document.location.reload(true);
             },
             error: function (response) {
@@ -351,7 +364,6 @@
             }
         })
     }
-
 </script>
 </body>
 </html>
