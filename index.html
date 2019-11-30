@@ -356,7 +356,7 @@
             },
             success: function (response) {
                 console.log(response);
-                alert(response['result']['message'] + " with ID: " + response['result']['id'])
+                alert(response['result']['message'] + " with ID: " + response['result']['data']['id']);
                 document.location.reload(true);
             },
             error: function (response) {
