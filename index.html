@@ -131,7 +131,7 @@
                                     Rp <a id="price">0</a>,-
                                 </div>
                                 <div class="col-md-4">
-                                    <input onclick="calculatePrice()" type="button" value="Calculate">
+                                    <input class="btn btn-primary" onclick="calculatePrice()" type="button" value="Calculate">
                                 </div>
                             </div>
                             <div class="form-group row total">
@@ -145,6 +145,7 @@
                                 <div class="col-lg-9">
                                     <input class="btn btn-success" data-target="#order" data-toggle="modal"
                                            id="orderButton" onclick="cetakModal()" type="button" value="Order!">
+                                    <strong style="color: red"><p id="warningtext"></p></strong>
                                 </div>
                             </div>
                         </form>
@@ -316,8 +317,10 @@
                 $('#totalPrice').html(total);
                 if (Number(response) !== 999) {
                     $('#orderButton').prop('disabled', false);
+                    document.getElementById('warningtext').innerHTML = "";
                 } else {
                     $('#orderButton').prop('disabled', true);
+                    document.getElementById('warningtext').innerHTML = "Service not available, please change your delivery provider/origin/destination city";
                 }
                 console.log(response)
             },
