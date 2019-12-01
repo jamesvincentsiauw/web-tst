@@ -48,16 +48,51 @@
                 <form action="">
                     <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
                         <div class="input-group">
-                            <input aria-describedby="button-addon1" class="form-control border-0 bg-light"
-                                   placeholder="Please input your tracking order" type="search">
-                            <div class="input-group-append">
-                                <button class="btn btn-link text-primary" id="button-addon1" type="submit"><i
-                                        class="fa fa-search"></i></button>
-                            </div>
+                            <form id="search">
+                                <input aria-describedby="button-addon1" class="form-control border-0 bg-light"
+                                           placeholder="Please input your tracking order. ex: 522466031177874 or 466436044708646 then Press ==>" type="text" id="searchBox">
+                                <div class="input-group-append">
+                                    <a onclick="getOrder()" class="btn btn-link text-primary" id="button-addon1"><i
+                                            class="fa fa-search"></i></a>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
+    <div id="track-result" class="container justify-content-md-around border-primary">
+        <div id="track-result-id-info">
+            <p id="track-result-number"></p>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <th scope="row">ID Pengiriman</th>
+                    <td id="id"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Nama</th>
+                    <td id="name"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Kota Pengirim</th>
+                    <td id="origin"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Kota Penerima</th>
+                    <td id="destination">-</td>
+                </tr>
+                <tr>
+                    <th scope="row">Status</th>
+                    <td id="status">-</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tanggal Pengiriman</th>
+                    <td id="date">-</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -85,4 +120,37 @@
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
+<script>
+    $(document).ready($('#track-result').hide());
+    function getOrder() {
+             $.ajax({
+                 url: 'http://3.92.50.97:4040/api/order',
+                 method: 'get',
+                 crossDomain: true,
+                 success: function (response) {
+                     console.log(response);
+                     for (var i =0; i<response['result'].length; i++){
+                         if (response['result'][i]['id'] === $('#searchBox').val()){
+                            $('#id').html(response['result'][i]['id']);
+                            $('#name').html(response['result'][i]['name']);
+                            $('#origin').html(response['result'][i]['origin']);
+                            $('#destination').html(response['result'][i]['destination']);
+                            $('#date').html(response['result'][i]['date']);
+                            $('#status').html(response['result'][i]['status']);
+                            $('#track-result').show();
+                         }
+                     }
+                 },
+                 error: function (response) {
+                     console.log(response)
+                     alert(response)
+                 }
+            })
+        }
+        $('#search').keypress(function (e) {
+            if (e.which === 13){
+                e.preventDefault();
+            }
+        })
+</script>
 </html>
